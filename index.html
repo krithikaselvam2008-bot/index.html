@@ -1,0 +1,394 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Event Registration Portal</title>
+
+    <!-- CSS Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #312e81, #6366f1);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #1e1b4b;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #facc15;
+        }
+
+        /* Homepage */
+        .hero {
+            background-color: #e0e7ff;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4338ca;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #312e81;
+        }
+
+        /* Sections */
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            color: #312e81;
+        }
+
+        /* Event Cards */
+        .event-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .event-card {
+            background-color: white;
+            width: 290px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card h3 {
+            color: #4338ca;
+            margin-bottom: 12px;
+        }
+
+        .event-card p {
+            margin-bottom: 12px;
+        }
+
+        /* Buttons */
+        button {
+            background-color: #4338ca;
+            color: white;
+            border: none;
+            padding: 11px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #312e81;
+        }
+
+        /* Registration Form */
+        form {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        form button {
+            width: 100%;
+            margin-top: 22px;
+        }
+
+        #message {
+            max-width: 450px;
+            margin: 20px auto;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1b4b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+
+            .event-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>College Event Registration Portal</h1>
+        <p>Discover Events. Showcase Your Talent!</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#register">Register</a>
+    </nav>
+
+    <!-- Homepage -->
+    <section id="home" class="hero">
+        <h2>Welcome to Our College Events!</h2>
+
+        <p>
+            Participate in exciting events and create unforgettable memories.
+        </p>
+
+        <a href="#events" class="btn">Explore Events</a>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section id="events">
+        <h2>Upcoming College Events</h2>
+
+        <div class="event-container">
+
+            <div class="event-card">
+                <h3>Cultural Fest</h3>
+                <p><strong>Date:</strong> 15 November 2026</p>
+                <p>Showcase your dancing, singing, and artistic talents.</p>
+
+                <button type="button"
+                    onclick="selectEvent('Cultural Fest')">
+                    Register
+                </button>
+            </div>
+
+            <div class="event-card">
+                <h3>Coding Competition</h3>
+                <p><strong>Date:</strong> 20 November 2026</p>
+                <p>Test your programming and problem-solving skills.</p>
+
+                <button type="button"
+                    onclick="selectEvent('Coding Competition')">
+                    Register
+                </button>
+            </div>
+
+            <div class="event-card">
+                <h3>Photography Contest</h3>
+                <p><strong>Date:</strong> 25 November 2026</p>
+                <p>Capture creative moments and share your vision.</p>
+
+                <button type="button"
+                    onclick="selectEvent('Photography Contest')">
+                    Register
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Student Registration -->
+    <section id="register">
+        <h2>Student Registration Form</h2>
+
+        <form id="registrationForm">
+
+            <label for="name">Student Name:</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label for="roll">Roll Number:</label>
+            <input
+                type="text"
+                id="roll"
+                placeholder="Enter your roll number"
+                required
+            >
+
+            <label for="email">Email Address:</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="event">Select Event:</label>
+            <select id="event" required>
+                <option value="">-- Select an Event --</option>
+                <option value="Cultural Fest">Cultural Fest</option>
+                <option value="Coding Competition">
+                    Coding Competition
+                </option>
+                <option value="Photography Contest">
+                    Photography Contest
+                </option>
+            </select>
+
+            <button type="submit">Submit Registration</button>
+
+        </form>
+
+        <div id="message" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 College Event Registration Portal</p>
+        <p>Designed for College Students</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to select an event
+        function selectEvent(eventName) {
+
+            document.getElementById("event").value = eventName;
+
+            document.getElementById("register").scrollIntoView({
+                behavior: "smooth"
+            });
+
+            document.getElementById("message").textContent = "";
+        }
+
+        // Registration form submission
+        document.getElementById("registrationForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const name = document.getElementById("name")
+                    .value.trim();
+
+                const roll = document.getElementById("roll")
+                    .value.trim();
+
+                const email = document.getElementById("email")
+                    .value.trim();
+
+                const selectedEvent = document.getElementById("event")
+                    .value;
+
+                const message = document.getElementById("message");
+
+                // Validate the entered details
+                if (!name || !roll || !email || !selectedEvent) {
+
+                    message.style.color = "red";
+                    message.style.backgroundColor = "#fee2e2";
+
+                    message.textContent =
+                        "Please fill in all the required details.";
+
+                    return;
+                }
+
+                // Display confirmation message
+                message.style.color = "green";
+                message.style.backgroundColor = "#dcfce7";
+
+                message.textContent =
+                    "Registration successful! Thank you, " +
+                    name + ". You have registered for " +
+                    selectedEvent + ".";
+
+                // Clear the form
+                document.getElementById("registrationForm").reset();
+            });
+    </script>
+
+</body>
+</html>
+```
